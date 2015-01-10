@@ -1,7 +1,8 @@
-#!/bin/bash -eu
+#!/bin/bash
 
 LOCUST_CMD="/usr/local/bin/locust"
 LOCUST_OPTS="-f $SCENARIO_FILE"
+LOCUST_MODE=${LOCUST_MODE:-standalone}
 
 if [ "$LOCUST_MODE" = "master" ]; then
   LOCUST_OPTS="$LOCUST_OPTS --master"

@@ -25,6 +25,12 @@ $ docker build -t locust-test .
 $ docker run -e LOCUST_MODE=standalone -e TARGET_URL=http://127.0.0.1 locust-test
 ```
 
+### multiple user classes
+
+```
+$ docker run -e LOCUST_CLASSES='Poster Lurker Admin' -e TARGET_URL=http://127.0.0.1 locust-test
+```
+
 ### distribution
 
 #### master

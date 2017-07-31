@@ -41,7 +41,7 @@ $ docker run \
 ```
 $ docker run \
   -e LOCUST_MODE=slave \
-  -e MASTER_HOST=http://<master-server-ip> \
+  -e MASTER_HOST=<master-server-ip> \
   -e TARGET_URL=https://<your-target-server> \
   locust-test
 ```

@@ -19,13 +19,13 @@ Then build it and run.
 $ docker build -t locust-test .
 ```
 
-### standalone
+### Standalone
 
 ```
 $ docker run -e LOCUST_MODE=standalone -e TARGET_URL=http://127.0.0.1 locust-test
 ```
 
-### distribution
+### Distribution
 
 #### master
 
@@ -45,3 +45,13 @@ $ docker run \
   -e TARGET_URL=https://<your-target-server> \
   locust-test
 ```
+
+### Alternative to building your own image
+
+An alternative to building your own image is to share your script into a temporary container. Assuming you have a `locustfile.py` file in the current folder you're in, you can run standalone with this command:
+
+```
+docker run --rm -v `pwd`:/myloadtest -p 8089:8089 hakobera/locust locust -f /myloadtest/locustfile.py --host http://mysite
+```
+
+You will also be able to access the web interface at http://localhost:8089
